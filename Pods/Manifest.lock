@@ -1,0 +1,25 @@
+PODS:
+  - PhoneNumberKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
+    - PhoneNumberKit/UIKit (= 3.2.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
+  - PhoneNumberKit/UIKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - UnderLineTextField (2.1.0)
+
+DEPENDENCIES:
+  - PhoneNumberKit (~> 3.1)
+  - UnderLineTextField (~> 2.1)
+
+SPEC REPOS:
+  trunk:
+    - PhoneNumberKit
+    - UnderLineTextField
+
+SPEC CHECKSUMS:
+  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
+  UnderLineTextField: b3f5307b56962331e30a965e81b79aae2df1de83
+
+PODFILE CHECKSUM: 4003168e0f55114bd508be8699f78c8ece2414b6
+
+COCOAPODS: 1.8.4
