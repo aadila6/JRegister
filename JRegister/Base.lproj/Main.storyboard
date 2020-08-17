@@ -38,19 +38,20 @@
                                     <action selector="nextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="STU-aH-6q7"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7l-B3-6Qg" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
-                                <rect key="frame" x="30" y="192" width="354" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVv-VU-gs3">
                                 <rect key="frame" x="30" y="428" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7l-B3-6Qg">
+                                <rect key="frame" x="30" y="192" width="336" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="EVv-VU-gs3" firstAttribute="top" secondItem="eJC-gh-WZB" secondAttribute="top" id="EAF-sY-mT1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eJC-gh-WZB" secondAttribute="trailing" constant="57" id="HYg-gM-KVm"/>
@@ -65,7 +66,7 @@
                             <constraint firstItem="eJC-gh-WZB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="316" id="wAR-WO-Huv"/>
                             <constraint firstItem="c7l-B3-6Qg" firstAttribute="leading" secondItem="PRL-hR-Nzc" secondAttribute="leading" id="xu0-Wx-CQa"/>
                             <constraint firstItem="c7l-B3-6Qg" firstAttribute="top" secondItem="PRL-hR-Nzc" secondAttribute="bottom" constant="38" id="zFB-TI-Wdd"/>
-                            <constraint firstItem="c7l-B3-6Qg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zN8-no-Xnq"/>
+                            <constraint firstItem="c7l-B3-6Qg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-9" id="zN8-no-Xnq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
