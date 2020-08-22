@@ -21,16 +21,18 @@ class CPTableViewController: UITableViewController{
     var allCountries : [Country] = []
     var countries: [[Country]] = []
     lazy var searchController = UISearchController(searchResultsController: nil)
+    lazy var cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissAnimated))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DEBUG: VC Initing")
         commonInit()
-//        self.tableView.register(Cell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
+        //        self.tableView.register(Cell.self, forCellReuseIdentifier: Cell.reuseIdentifier)
         print("DEBUG: Finished Loading Search Bar")
         loadCountry()
         print("DEBUG: Finished Loading Countries")
         
-//      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        //      tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         print(self.countries)
         self.tableView.reloadData()
     }
@@ -66,7 +68,7 @@ class CPTableViewController: UITableViewController{
             result.append(popular)
             return result + countries
         }()
-//        self.tableView.reloadData()
+        //        self.tableView.reloadData()
     }
     
     func commonInit() {
@@ -80,8 +82,11 @@ class CPTableViewController: UITableViewController{
     }
     
     func country(for indexPath: IndexPath) -> Country {
-//        self.isFiltering ? filteredCountries[indexPath.row] : countries[indexPath.section][indexPath.row]
+        //        self.isFiltering ? filteredCountries[indexPath.row] : countries[indexPath.section][indexPath.row]
         countries[indexPath.section][indexPath.row]
+    }
+    @objc func dismissAnimated() {
+        dismiss(animated: true)
     }
     
     
@@ -93,7 +98,6 @@ class CPTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         isFiltering ? filteredCountries.count : countries[section].count
-//        return 10
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,61 +123,26 @@ class CPTableViewController: UITableViewController{
                 .folding(options: .diacriticInsensitive, locale: nil) ?? ""
         }
     }
-
+    
+    public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if isFiltering {
+            return nil
+        } else if section == 0{
+            return NSLocalizedString("PhoneNumberKit.CountryCodePicker.Current", value: "Country Name", comment: "Name of \"Current\" section")
+        }
+        return countries[section].first?.name.first.map(String.init)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let country = self.country(for: indexPath)
-        print(country)
+        //        print(country)
         delegate?.CPTableViewControllerDidPickCountry(country)
         print("Passed to the delegate")
         tableView.deselectRow(at: indexPath, animated: true)
+        dismiss(animated: true) {
+            print("Selected \(country.name)")
+        }
     }
-     
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
@@ -209,7 +178,7 @@ extension CPTableViewController: UISearchResultsUpdating {
         }
     }
     
-   
+    
     
     var isFiltering: Bool {
         searchController.isActive && !isSearchBarEmpty
@@ -230,14 +199,14 @@ extension CPTableViewController: UISearchResultsUpdating {
     }
 }
 class Cell: UITableViewCell {
-       
-       static let reuseIdentifier = "Cell"
-       
-       override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-           super.init(style: .value2, reuseIdentifier: Self.reuseIdentifier)
-       }
-       
-       required init?(coder: NSCoder) {
-           fatalError("init(coder:) has not been implemented")
-       }
-   }
+    
+    static let reuseIdentifier = "Cell"
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .value2, reuseIdentifier: Self.reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
