@@ -30,26 +30,24 @@ fileprivate struct Defaults {
 }
 
 class RegisterViewModel {
-    
+
     // MARK: - Properties
-    
+
     var titleText: String { return Defaults.titleLabel }
     var detailText: String { return Defaults.titleDetailLabel }
     var footerText: String { return Defaults.titleFooterLabel }
     var placeholderText: String { return Defaults.titlePlaceholderLabel }
     var errorMessage: String { return Defaults.errorMessageLabel }
-        
-    
 }
 
 // MARK: - Network API Request
 
 extension RegisterViewModel {
-    
+
     func doRegister() {
 //        guard let code = dialingCode.value, let phone = phone.value else { return }
 //        let phoneNumber = code . + phone
-        
+
 //        ProgressHUD.show()
 //        FirebaseManager.shared.authenticate(withPhone: phoneNumber, completion: { (otpToken, error) in
 //            if let error = error {
