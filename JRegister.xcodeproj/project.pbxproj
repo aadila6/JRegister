@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		76BF4E225A00F66B261D37AE /* Pods_JRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001E5A741A1BFCF1E87E4223 /* Pods_JRegister.framework */; };
+		C53175D424F1D09A00C284B2 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53175D324F1D09A00C284B2 /* KeyboardObserver.swift */; };
 		C56D289B24E340F5004D3E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D289A24E340F5004D3E1B /* AppDelegate.swift */; };
 		C56D289D24E340F5004D3E1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D289C24E340F5004D3E1B /* SceneDelegate.swift */; };
 		C56D289F24E340F5004D3E1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56D289E24E340F5004D3E1B /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		001E5A741A1BFCF1E87E4223 /* Pods_JRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7545BDD8521D0232AB5F9E /* Pods-JRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRegister.release.xcconfig"; path = "Target Support Files/Pods-JRegister/Pods-JRegister.release.xcconfig"; sourceTree = "<group>"; };
 		A7B361478BFA258B5D696C26 /* Pods-JRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRegister.debug.xcconfig"; path = "Target Support Files/Pods-JRegister/Pods-JRegister.debug.xcconfig"; sourceTree = "<group>"; };
+		C53175D324F1D09A00C284B2 /* KeyboardObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		C56D289724E340F5004D3E1B /* JRegister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JRegister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56D289A24E340F5004D3E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C56D289C24E340F5004D3E1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		C56D289924E340F5004D3E1B /* JRegister */ = {
 			isa = PBXGroup;
 			children = (
+				C53175D324F1D09A00C284B2 /* KeyboardObserver.swift */,
 				C56D28AF24E344A7004D3E1B /* RegisterViewController.swift */,
 				C56D28AE24E344A7004D3E1B /* RegisterViewModel.swift */,
 				C56D289A24E340F5004D3E1B /* AppDelegate.swift */,
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5D2D41924F07CF3007A2C4D /* CPTableViewController.swift in Sources */,
+				C53175D424F1D09A00C284B2 /* KeyboardObserver.swift in Sources */,
 				C56D28B724E74DCC004D3E1B /* CountryListTableViewController.swift in Sources */,
 				C56D289F24E340F5004D3E1B /* ViewController.swift in Sources */,
 				C56D28B124E344A8004D3E1B /* RegisterViewController.swift in Sources */,

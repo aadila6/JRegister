@@ -38,7 +38,6 @@ class CPTableViewController: UITableViewController{
     }
     
     // MARK: - Table view data source
-    
     func loadCountry(){
         let phoneNumberKit = PhoneNumberKit()
         var commonCountryCodes: [String] = PhoneNumberKit.CountryCodePicker.commonCountryCodes
