@@ -12,15 +12,14 @@ import UnderLineTextField
 import PhoneNumberKit
 
 class ViewController: UIViewController, CountryCodeDelegate, UITextFieldDelegate, UnderLineTextFieldDelegate {
-    
     var pnTextField : PhoneNumberTextField!
     var viewModel : RegisterViewModel!
     let boldConfig = UIImage.SymbolConfiguration(weight: .bold)
     var countryImage = UIImage(systemName: "bell")!
-    var country : Country!
+    var country : CPTableViewController.Country!
     var leftText : String = "🇺🇸 +1"
     var label : UILabel!
-    private var keyboardObserver: KeyboardObserver!
+    
     let vc = CPTableViewController()
     private lazy var _defaultRegion: String = PhoneNumberKit.defaultRegionCode()
     var counter = 0
